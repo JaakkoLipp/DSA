@@ -146,6 +146,7 @@ if __name__ == "__main__":
     table.hashAdd("training")
     table.hashAdd("friend")
     table.print()
+
     table.remove("employee")
     table.remove("of")
     table.remove("toward")
@@ -156,7 +157,17 @@ if __name__ == "__main__":
     table.remove("rather")
     table.remove("yes")
     table.print()
+
     table.search("yes")
     table.search(1)
 
     print("\n--- Done! ---")
+
+"""
+TO-DO:
+-fix removing
+-Hashing algorithm
+-check code
+-comment
+-essays
+"""

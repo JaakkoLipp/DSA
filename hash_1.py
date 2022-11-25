@@ -1,5 +1,3 @@
-import instructions
-
 def hash(m, data):
     sum = 0
     for i in range(len(data)):
@@ -96,6 +94,7 @@ class HashTable:
             print("error inserting key")
             self.T[i].append(data)
     
+    #not working
     def remove(self, data):
         i = hash(self.M, data)
         if self.T[i] == data:
@@ -109,8 +108,7 @@ class HashTable:
             if(finder!=-1):
                 print("\nLocation of",data+":",finder, "in LL:",Lcounter)
                 return
-            else:
-                print("L bozo")
+        print(data,"Not Found")
         return
     
     def print(self):
@@ -125,5 +123,40 @@ class HashTable:
 
 if __name__ == "__main__":
     print("--- Tests: ---")
-    instructions.tests()
+    
+    table = HashTable(5)
+    table.hashAdd("town")
+    table.hashAdd("rather")
+    table.hashAdd("short")
+    table.hashAdd("toward")
+    table.hashAdd("employee")
+    table.hashAdd("player")
+    table.hashAdd("toward")
+    table.hashAdd("the")
+    table.hashAdd("of")
+    table.hashAdd("college")
+    table.hashAdd("in")
+    table.hashAdd("yes")
+    table.hashAdd("billion")
+    table.hashAdd("five")
+    table.hashAdd("wear")
+    table.hashAdd("last")
+    table.hashAdd("decade")
+    table.hashAdd("first")
+    table.hashAdd("training")
+    table.hashAdd("friend")
+    table.print()
+    table.remove("employee")
+    table.remove("of")
+    table.remove("toward")
+    table.remove("in")
+    table.remove("player")
+    table.remove("town")
+    table.remove("five")
+    table.remove("rather")
+    table.remove("yes")
+    table.print()
+    table.search("yes")
+    table.search(1)
+
     print("\n--- Done! ---")

@@ -81,6 +81,7 @@ class HashTable:
         self.T = [None] * M
     
     def hashAdd(self, data):
+        data=str(data)
         i = hash(self.M, data)
         if self.T[i] == None:
             print("Creating new LL at:",i, "for:",data)
@@ -100,7 +101,9 @@ class HashTable:
         if self.T[i] == data:
             self.T[i] = None
     
+    #make use def hash
     def search(self, data):
+        data=str(data)
         Lcounter=0
         for i in self.T:
             Lcounter+=1
@@ -145,6 +148,8 @@ if __name__ == "__main__":
     table.hashAdd("first")
     table.hashAdd("training")
     table.hashAdd("friend")
+    table.hashAdd(12)
+
     table.print()
 
     table.remove("employee")
@@ -159,15 +164,16 @@ if __name__ == "__main__":
     table.print()
 
     table.search("yes")
-    table.search(1)
+    table.search(12)
 
     print("\n--- Done! ---")
 
 """
 TO-DO:
 -fix removing
--Hashing algorithm
+-Hashing algorithm v*q=position 
 -check code
 -comment
 -essays
+-make search use hash lookup?
 """

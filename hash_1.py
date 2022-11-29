@@ -1,7 +1,7 @@
 def hash(m, data):
     sum = 0
     for i in range(len(data)):
-        sum += ord(data[i])
+        sum += ord(data[i])*(2**i)
     return (sum % m)
 
 class Node:
@@ -92,14 +92,19 @@ class HashTable:
             print("Added at:",i,data)
             self.T[i].append(data)
         else:
-            print("error inserting key")
+            print("---Error inserting key---")
             self.T[i].append(data)
     
     #not working
     def remove(self, data):
         i = hash(self.M, data)
-        if self.T[i] == data:
-            self.T[i] = None
+        iL=self.T[i].index(data)
+        if (iL!=-1):
+            self.T[i].delete(iL)
+            print("Removed:",data)
+        else:
+            print("---Removing Error---")
+        return
     
     #make use def hash
     def search(self, data):
@@ -160,8 +165,10 @@ if __name__ == "__main__":
     table.remove("town")
     table.remove("five")
     table.remove("rather")
-    table.remove("yes")
     table.print()
+
+    table.search("yes")
+    table.remove("yes")
 
     table.search("yes")
     table.search(12)

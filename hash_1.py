@@ -1,7 +1,7 @@
 def hash(m, data):
     sum = 0
     for i in range(len(data)):
-        sum += ord(data[i])*(2**i)
+        sum += ord(data[i])+(2**i)
     return (sum % m)
 
 class Node:
@@ -95,7 +95,6 @@ class HashTable:
             print("---Error inserting key---")
             self.T[i].append(data)
     
-    #not working
     def remove(self, data):
         data=str(data)
         i = hash(self.M, data)
@@ -107,7 +106,6 @@ class HashTable:
             print("---Removing Error---")
         return
     
-    #make use def hash
     def search(self, data):
         data=str(data)
         Lcounter=0
@@ -179,7 +177,6 @@ if __name__ == "__main__":
 
 """
 TO-DO:
--fix removing int
 -Hashing algorithm v*q=position 
 -check code
 -comment

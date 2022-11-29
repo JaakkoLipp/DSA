@@ -1,4 +1,5 @@
 def hash(m, data):
+    data=str(data)
     sum = 0
     for i in range(len(data)):
         sum += ord(data[i])+(2**i)
@@ -81,7 +82,6 @@ class HashTable:
         self.T = [None] * M
     
     def hashAdd(self, data):
-        data=str(data)
         i = hash(self.M, data)
         if self.T[i] == None:
             print("Creating new LL at:",i, "for:",data)
@@ -96,7 +96,6 @@ class HashTable:
             self.T[i].append(data)
     
     def remove(self, data):
-        data=str(data)
         i = hash(self.M, data)
         iL=self.T[i].index(data)
         if (iL!=-1):
@@ -107,13 +106,13 @@ class HashTable:
         return
     
     def search(self, data):
-        data=str(data)
+        datastr=str(data)
         Lcounter=0
         for i in self.T:
             Lcounter+=1
             finder=i.index(data)
             if(finder!=-1):
-                print("\nLocation of",data+":",finder, "in LL:",Lcounter)
+                print("\nLocation of",datastr+":",finder, "in LL:",Lcounter)
                 return
         print(data,"Not Found")
         return
@@ -152,10 +151,7 @@ if __name__ == "__main__":
     table.hashAdd("first")
     table.hashAdd("training")
     table.hashAdd("friend")
-    table.hashAdd(12)
-
     table.print()
-
     table.remove("employee")
     table.remove("of")
     table.remove("toward")
@@ -164,18 +160,29 @@ if __name__ == "__main__":
     table.remove("town")
     table.remove("five")
     table.remove("rather")
-    table.print()
-
     table.search("yes")
     table.remove("yes")
+    table.hashAdd("SkandiTestiÖÅÄ")
+    
+    # int testing
+    table.hashAdd(12)
+    table.hashAdd(1212)
+    #table.hashAdd(121212121212)
+    table.hashAdd(2222222)
+    table.hashAdd(9999999)
 
-    table.search("yes")
     table.search(12)
     table.remove(12)
     table.search(12)
+    table.print()
+    # int testing
     print("\n--- Done! ---")
 
 """
 TO-DO:
-- INT FUNCTIONALITY
+-Hashing algorithm v*q=position 
+-check code
+-comment
+-essays
+-make search use hash lookup?
 """

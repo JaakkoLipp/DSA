@@ -177,9 +177,5 @@ if __name__ == "__main__":
 
 """
 TO-DO:
--Hashing algorithm v*q=position 
--check code
--comment
--essays
--make search use hash lookup?
+- INT FUNCTIONALITY
 """

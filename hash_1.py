@@ -97,6 +97,7 @@ class HashTable:
     
     #not working
     def remove(self, data):
+        data=str(data)
         i = hash(self.M, data)
         iL=self.T[i].index(data)
         if (iL!=-1):
@@ -172,12 +173,13 @@ if __name__ == "__main__":
 
     table.search("yes")
     table.search(12)
-
+    table.remove(12)
+    table.search(12)
     print("\n--- Done! ---")
 
 """
 TO-DO:
--fix removing
+-fix removing int
 -Hashing algorithm v*q=position 
 -check code
 -comment

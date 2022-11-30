@@ -107,13 +107,11 @@ class HashTable:
     
     def search(self, data):
         datastr=str(data)
-        Lcounter=0
-        for i in self.T:
-            Lcounter+=1
-            finder=i.index(data)
-            if(finder!=-1):
-                print("\nLocation of",datastr+":",finder, "in LL:",Lcounter)
-                return
+        i = hash(self.M, data)
+        finder=self.T[i].index(data)
+        if(finder!=-1):
+            print("\nLocation of",datastr+": node",finder, "in LL:",i)
+            return
         print(data,"Not Found")
         return
     
@@ -122,8 +120,8 @@ class HashTable:
         Lcounter=0
         for i in self.T:
             if (i is not None) and (i != "Del"):
-                Lcounter+=1
                 print("LL:",Lcounter)
+                Lcounter+=1
                 i.print()
         return
 
@@ -152,6 +150,7 @@ if __name__ == "__main__":
     table.remove(1234)
     table.remove("aaaabbbbcccc")
     table.print()
+    table.search(12)
 
     print("\n--- Done! ---")
 

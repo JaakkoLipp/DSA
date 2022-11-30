@@ -118,7 +118,7 @@ class HashTable:
         return
     
     def print(self):
-        print("\nPrinting LL:")
+        print("\nPrinting HT:")
         Lcounter=0
         for i in self.T:
             if (i is not None) and (i != "Del"):
@@ -130,59 +130,33 @@ class HashTable:
 if __name__ == "__main__":
     print("--- Tests: ---")
     
-    table = HashTable(5)
-    table.hashAdd("town")
-    table.hashAdd("rather")
-    table.hashAdd("short")
-    table.hashAdd("toward")
-    table.hashAdd("employee")
-    table.hashAdd("player")
-    table.hashAdd("toward")
-    table.hashAdd("the")
-    table.hashAdd("of")
-    table.hashAdd("college")
-    table.hashAdd("in")
-    table.hashAdd("yes")
-    table.hashAdd("billion")
-    table.hashAdd("five")
-    table.hashAdd("wear")
-    table.hashAdd("last")
-    table.hashAdd("decade")
-    table.hashAdd("first")
-    table.hashAdd("training")
-    table.hashAdd("friend")
-    table.print()
-    table.remove("employee")
-    table.remove("of")
-    table.remove("toward")
-    table.remove("in")
-    table.remove("player")
-    table.remove("town")
-    table.remove("five")
-    table.remove("rather")
-    table.search("yes")
-    table.remove("yes")
-    table.hashAdd("SkandiTestiÖÅÄ")
-    
-    # int testing
+    table = HashTable(3)
     table.hashAdd(12)
-    table.hashAdd(1212)
-    table.hashAdd(121212121212)
-    table.hashAdd(2222222)
-    table.hashAdd(9999999)
-
-    table.search(12)
-    table.remove(12)
-    table.search(12)
+    table.hashAdd("hashtable")
     table.print()
-    # int testing
+    table.hashAdd(1234)
+    table.print()
+    table.hashAdd(4328989)
+    table.print()
+    table.hashAdd("BM40A1500")
+    table.print()
+    table.hashAdd(-12456)
+    table.print()
+    table.hashAdd("aaaabbbbcccc")
+    table.print()
+
+    table.search(-12456)
+    table.search("hashtable")
+    table.search("1235")
+    table.remove("BM40A1500")
+    table.remove(1234)
+    table.remove("aaaabbbbcccc")
+    table.print()
+
     print("\n--- Done! ---")
 
 """
 TO-DO:
--Hashing algorithm v*q=position 
--check code
--comment
--essays
--make search use hash lookup?
+-m=3, 12, 'hashtable', 1234, 4328989, 'BM40A1500', -12456, 'aaaabbbbcccc' 
+
 """

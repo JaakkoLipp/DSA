@@ -118,7 +118,7 @@ class HashTable:
         return
     
     def print(self):
-        print("\nPrinting LL:")
+        print("\nPrinting HT:")
         Lcounter=0
         for i in self.T:
             if (i is not None) and (i != "Del"):

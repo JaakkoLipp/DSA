@@ -111,9 +111,8 @@ class HashTable:
         finder=self.T[i].index(data)
         if(finder!=-1):
             print("\nLocation of",datastr+": node",finder, "in LL:",i)
-            return
-        print(data,"Not Found")
-        return
+            return 1
+        return 0
     
     def print(self):
         print("\nPrinting HT:")
@@ -138,10 +137,15 @@ if __name__ == "__main__":
     f.close()
     table.print()
 
+    counter=0
     f=open("kaikkisanat.txt")
     for line in f:
         line=line.rstrip('\n')
-        table.hashAdd(line)
+        if(table.search(line)!=1):
+            table.hashAdd(line)
+        else:
+            counter+=1
+
     f.close()
     table.print()
 
@@ -149,5 +153,6 @@ if __name__ == "__main__":
     table.search("sotasyyllisyysoikeudenkäynti")
     table.search("zwitterionic")
     table.search("aahing")
-    
+    print("Same words:",counter)
+
     print("\n--- Done! ---")

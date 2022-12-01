@@ -2,7 +2,7 @@ def hash(m, data):
     data=str(data)
     sum = 0
     for i in range(len(data)):
-        sum += ord(data[i])*(i+1)
+        sum += ord(data[i])**(i+1)
     return (sum % m)
 
 class Node:

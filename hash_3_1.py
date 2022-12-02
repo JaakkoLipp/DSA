@@ -1,3 +1,7 @@
+# code commenting is kept to a minimum 
+# for improved clarity, 
+# see document for details
+
 def hash(m, data):
     data=str(data)
     sum = 0
@@ -108,6 +112,8 @@ class HashTable:
     def search(self, data):
         datastr=str(data)
         i = hash(self.M, data)
+        if (self.T[i] is not LinkedList):
+            return 0
         finder=self.T[i].index(data)
         if(finder!=-1):
             print("\nLocation of",datastr+": node",finder, "in LL:",i)
@@ -135,7 +141,6 @@ if __name__ == "__main__":
         line=line.rstrip('\n')
         table.hashAdd(line)
     f.close()
-    table.print()
 
     counter=0
     f=open("kaikkisanat.txt")
@@ -145,14 +150,12 @@ if __name__ == "__main__":
             table.hashAdd(line)
         else:
             counter+=1
-
     f.close()
-    table.print()
 
-    table.search("pyyhkäisyelektronimikroskooppi")
-    table.search("sotasyyllisyysoikeudenkäynti")
-    table.search("zwitterionic")
-    table.search("aahing")
+    #uncomment to print full table
+    #table.print()
+    #uncomment to print full table
+
     print("Same words:",counter)
 
     print("\n--- Done! ---")

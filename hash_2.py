@@ -1,3 +1,7 @@
+# code commenting is kept to a minimum 
+# for improved clarity, 
+# see document for details
+
 def hash(m, data):
     data=str(data)
     sum = 0
@@ -108,6 +112,8 @@ class HashTable:
     def search(self, data):
         datastr=str(data)
         i = hash(self.M, data)
+        if (self.T[i] is not LinkedList):
+            return 0
         finder=self.T[i].index(data)
         if(finder!=-1):
             print("\nLocation of",datastr+": node",finder, "in LL:",i)

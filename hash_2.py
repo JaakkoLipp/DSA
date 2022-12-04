@@ -1,7 +1,3 @@
-# code commenting is kept to a minimum 
-# for improved clarity, 
-# see document for details
-
 def hash(m, data):
     data=str(data)
     sum = 0
@@ -112,20 +108,19 @@ class HashTable:
     def search(self, data):
         datastr=str(data)
         i = hash(self.M, data)
-        if (self.T[i] is not LinkedList):
+        if (type(self.T[i]) is not LinkedList):
             return 0
         finder=self.T[i].index(data)
         if(finder!=-1):
             print("\nLocation of",datastr+": node",finder, "in LL:",i)
-            return
-        print(data,"Not Found")
-        return
+            return 1
+        return 0
     
     def print(self):
         print("\nPrinting HT:")
         Lcounter=0
         for i in self.T:
-            if (i is not None) and (i != "Del"):
+            if (i is not None):
                 print("LL:",Lcounter)
                 Lcounter+=1
                 i.print()
@@ -159,9 +154,3 @@ if __name__ == "__main__":
     table.search(12)
 
     print("\n--- Done! ---")
-
-"""
-TO-DO:
--m=3, 12, 'hashtable', 1234, 4328989, 'BM40A1500', -12456, 'aaaabbbbcccc' 
-
-"""

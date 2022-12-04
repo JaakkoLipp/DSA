@@ -1,7 +1,3 @@
-# code commenting is kept to a minimum 
-# for improved clarity, 
-# see document for details
-
 def hash(m, data):
     data=str(data)
     sum = 0
@@ -117,9 +113,8 @@ class HashTable:
         finder=self.T[i].index(data)
         if(finder!=-1):
             print("\nLocation of",datastr+": node",finder, "in LL:",i)
-            return
-        print(data,"Not Found")
-        return
+            return 1
+        return 0
     
     def print(self):
         print("\nPrinting HT:")
